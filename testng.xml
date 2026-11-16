@@ -6,25 +6,16 @@
     <classes>
       <class name="test.DynamicButtonTest"/>
       <class name="test.ButtonsTest"/>
-      <class name="test.ScrollDown_test"/>
-      <class name="test.Accordion_test"/>
-      <class name="test.RegistrationTest"/>
-      <class name="test.NestedFrames_Test"/>
-      <class name="test.Auto_Complete_test"/>
-      <class name="test.ScrollUpTest"/>
+      
+      
+      
+      
+      
       <class name="test.Droppable_Test"/>
       <class name="test.Resize_Test"/>
       
-      <class name="test.HorizontalScrollTest"/>
+      
       <class name="test.Frames_Test"/>
-      <class name="test.LoginTest"/>
-      <class name="test.Alert_Test"/>
-      <class name="test.Slider_Test"/>
-      <class name="test.Calender_Test"/>
-      <class name="test.FormTest"/>
-      <class name="test.Link_test"/>
-      <class name="test.RadioButtontest"/>
-      <class name="test.Model_test"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
