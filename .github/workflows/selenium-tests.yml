@@ -1,0 +1,33 @@
+name: Re_Start Selenium Automation
+
+on: 
+  push:
+      branches:
+        - main
+  pull_request: 
+    branches:
+      - main
+
+  workflow_dispatch: 
+jobs:
+  selenium-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Project Code
+        uses: actions/checkout@v4
+      - name: Checkout Project Code
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      - name: Build Maven Project
+        run: mvn -B clean compile
+
+      - name: Execute TestNG Tests
+        run: mvn -B test
