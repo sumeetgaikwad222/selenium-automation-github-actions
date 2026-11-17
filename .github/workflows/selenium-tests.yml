@@ -32,3 +32,12 @@ jobs:
 
       - name: Execute TestNG Tests
         run: mvn -B test
+
+      - name: Upload TestNG Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: TestNG-Reports
+          path: target/surefire-reports/
+          if-no-files-found: warn
+          
