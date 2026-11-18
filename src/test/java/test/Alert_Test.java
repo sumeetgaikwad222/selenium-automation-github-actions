@@ -10,7 +10,7 @@ public class Alert_Test extends BaseClass{
 	@Test
 	public void checking()
 	{
-		Alerts al = new Alerts(driver);
+		Alerts al = new Alerts(driver.get());
 		al.always();
 		
 		//al.onclickalert();

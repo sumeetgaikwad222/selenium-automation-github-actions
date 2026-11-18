@@ -9,7 +9,7 @@ public class HorizontalScrollTest extends BaseClass{
 	@Test
 	public void checking()
 	{
-		HorizontalScroll sl = new HorizontalScroll(driver);
+		HorizontalScroll sl = new HorizontalScroll(driver.get());
 		sl.always();
 	}
 

@@ -9,7 +9,7 @@ public class Droppable_Test extends BaseClass{
 	@Test
 	public void checking()
 	{
-		Droppable dp = new Droppable(driver);
+		Droppable dp = new Droppable(driver.get());
 		dp.always();
 		dp.check();
 	}

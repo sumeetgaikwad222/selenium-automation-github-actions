@@ -9,7 +9,7 @@ public class FormTest extends BaseClass {
 	@Test
     public void fillForm()
     {
-        Pratice_form form = new Pratice_form(driver);
+        Pratice_form form = new Pratice_form(driver.get());
        form.perform1(username, email, "Male", "Music"); 		
     }
 

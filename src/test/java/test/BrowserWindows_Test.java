@@ -9,7 +9,7 @@ public class BrowserWindows_Test extends BaseClass{
 	@Test
 	public void checking()
 	{
-		Browser_windows bw = new Browser_windows(driver);
+		Browser_windows bw = new Browser_windows(driver.get());
 		bw.perform("New Window Message");
 	}
 }

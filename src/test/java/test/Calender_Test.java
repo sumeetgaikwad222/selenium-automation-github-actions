@@ -9,7 +9,7 @@ public class Calender_Test extends BaseClass{
 	@Test
 	public void perform()
 	{
-		Calender cl = new Calender(driver);
+		Calender cl = new Calender(driver.get());
 		cl.always();
 		cl.check(
 		        "June",

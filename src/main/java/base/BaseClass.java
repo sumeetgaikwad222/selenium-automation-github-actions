@@ -12,14 +12,15 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import files.ReadFiles;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass implements Constant {
-
-    protected static WebDriver driver;
-
+	
+	protected static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    @Parameters("browser")
     @BeforeTest
     public void setup(@Optional("chrome") String browser) throws IOException {
 
@@ -31,47 +32,38 @@ public class BaseClass implements Constant {
             WebDriverManager.chromedriver().setup();
 
             ChromeOptions options = new ChromeOptions();
-
-            // Headless execution for GitHub Actions
             options.addArguments("--headless=new");
-
-            // Linux CI stability options
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--disable-gpu");
-
-            // Set browser window dimensions
             options.addArguments("--window-size=1920,1080");
 
-            driver = new ChromeDriver(options);
-
+            driver.set(new ChromeDriver(options));
         } else if (browser.equalsIgnoreCase("edge")) {
 
-            System.setProperty(MSEDGEKey, MSEDGEDriverPath);
+        	  WebDriverManager.edgedriver().setup();
 
-            EdgeOptions options = new EdgeOptions();
-            options.addArguments("--headless=new");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--window-size=1920,1080");
+        	    EdgeOptions options = new EdgeOptions();
 
-            driver = new EdgeDriver(options);
+        	    options.addArguments("--headless");
+        	    options.addArguments("--window-size=1920,1080");
+
+        	    driver.set(new EdgeDriver(options));
 
         } else {
             throw new IllegalArgumentException("Unsupported browser: " + browser);
         }
 
-        driver.manage().timeouts()
-                .implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));
+        driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));
 
-        driver.get(url);
+        driver.get().get(url);
     }
 
     @AfterTest(alwaysRun = true)
     public void teardown() {
 
         if (driver != null) {
-            driver.quit();
+            driver.get().quit();
             driver = null;
         }
     }

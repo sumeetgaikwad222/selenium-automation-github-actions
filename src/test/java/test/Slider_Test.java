@@ -9,7 +9,7 @@ public class Slider_Test extends BaseClass{
 	@Test
 	public void checking()
 	{
-		Slider sl = new Slider(driver);
+		Slider sl = new Slider(driver.get());
 		sl.always();
 		sl.setSliderValue(68);
 	}

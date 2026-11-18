@@ -9,7 +9,7 @@ public class Link_test extends BaseClass{
 	@Test
 	public void perform()
 	{
-		pages.Links ln = new pages.Links(driver);
+		pages.Links ln = new pages.Links(driver.get());
 		ln.check("created", "create");
 	}
 

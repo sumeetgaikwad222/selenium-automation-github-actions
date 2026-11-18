@@ -10,7 +10,7 @@ public class Model_test extends BaseClass{
 	@Test
 	public void checking()
 	{
-		Modal_Dialogs md = new Modal_Dialogs(driver);
+		Modal_Dialogs md = new Modal_Dialogs(driver.get());
 		md.always();
 		md.check();
 	}

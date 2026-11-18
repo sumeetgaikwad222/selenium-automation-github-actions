@@ -11,7 +11,7 @@ public class RegistrationTest extends BaseClass {
 	
 	@Test
 	public void registrationTest() throws IOException {
-		Registration reg = new Registration(driver);
+		Registration reg = new Registration(driver.get());
 		reg.perform("sathish", "kumar", "sathishkumar", "sathish", "2");
 	}
 }

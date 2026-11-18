@@ -9,7 +9,7 @@ public class ScrollUpTest extends BaseClass{
 	@Test
 	public void checking()
 	{
-		ScrollUp sl = new ScrollUp(driver);
+		ScrollUp sl = new ScrollUp(driver.get());
 		sl.always();
 	}
 

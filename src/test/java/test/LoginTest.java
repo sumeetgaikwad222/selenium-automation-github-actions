@@ -9,7 +9,7 @@ import pages.LoginPage;
 public class LoginTest extends BaseClass {
 	@Test
 	public void loginTest() {
-		LoginPage login = new LoginPage(driver);
+		LoginPage login = new LoginPage(driver.get());
 		login.perform();
 	}
 

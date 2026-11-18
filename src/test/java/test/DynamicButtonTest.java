@@ -10,7 +10,7 @@ public class DynamicButtonTest  extends BaseClass{
 	@Test
 	public void perform()
 	{
-		Dynamicbutton dy = new Dynamicbutton(driver);
+		Dynamicbutton dy = new Dynamicbutton(driver.get());
 		dy.check();
 	}
 

@@ -10,7 +10,7 @@ public class Frames_Test extends BaseClass{
 	@Test
 	public void checking()
 	{
-		Frames fr = new Frames(driver);
+		Frames fr = new Frames(driver.get());
 		fr.always();
 		fr.frameone();
 	}

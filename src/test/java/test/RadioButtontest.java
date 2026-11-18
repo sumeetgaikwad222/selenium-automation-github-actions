@@ -11,7 +11,7 @@ public class RadioButtontest extends BaseClass{
 	@Test
 	public void perform()
 	{
-		CheckBox ck = new CheckBox(driver);
+		CheckBox ck = new CheckBox(driver.get());
 		ck.checking("Impressive");
 	}
 
