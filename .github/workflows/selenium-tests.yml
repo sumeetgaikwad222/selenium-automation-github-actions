@@ -14,7 +14,12 @@ on:
 jobs:
   selenium-tests:
     runs-on: ubuntu-latest
-
+	
+	strategy :
+		fail_fast : false
+	matrix : [chrome, edge]
+	
+	
     steps:
       - name: Checkout Project Code
         uses: actions/checkout@v4
@@ -31,6 +36,10 @@ jobs:
 
       - name: Execute TestNG Tests
         run: mvn -B test
+		env: 
+			BROWSER: ${{vars.BROWSER}}
+			username: ${{secrets.username}}
+			password: ${{secrets.password}}
 
       - name: Upload TestNG Reports
         if: always()

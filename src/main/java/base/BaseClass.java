@@ -26,7 +26,6 @@ public class BaseClass implements Constant {
 
         ReadFiles files = new ReadFiles();
         String url = files.config(Config, "url");
-
         if (browser.equalsIgnoreCase("chrome")) {
 
             WebDriverManager.chromedriver().setup();
